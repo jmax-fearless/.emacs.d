@@ -35,4 +35,4 @@
 (add-to-list 'auto-mode-alist '("\\.prawn$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . web-mode))
 
-(add-hook 'after-init-hook 'projectile-rails-global-mode)
+;; (add-hook 'after-init-hook 'projectile-rails-global-mode)
