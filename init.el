@@ -79,7 +79,9 @@
   (setq company-backends (delete 'company-semantic company-backends)))
 
 (use-package docker
-  :ensure t)
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c d") 'docker))
 
 (use-package docker-api
   :ensure t)
@@ -105,6 +107,9 @@
   (global-set-key (kbd "<M-kp-9>") 'eyebrowse-switch-to-window-config-4)
   (setq eyebrowse-new-workspace t)
   (eyebrowse-mode t))
+
+(use-package feature-mode
+  :ensure t)
 
 (use-package flycheck
   :ensure t)
@@ -174,6 +179,9 @@
   :config
   (define-key projectile-rails-mode-map (kbd "C-c r") 'projectile-rails-command-map)
   (projectile-rails-global-mode))
+
+(use-package projectile-speedbar
+  :ensure t)
 
 (use-package python-mode
   :ensure t)
