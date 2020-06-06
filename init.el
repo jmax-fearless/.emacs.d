@@ -265,5 +265,3 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (unless (display-graphic-p) (load "./text-mode-customizations.el"))
-
-(load-library "sidebar")
