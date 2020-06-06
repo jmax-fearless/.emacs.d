@@ -165,12 +165,15 @@
 (use-package projectile
   :ensure t
   :config
-  (projectile-mode 1)
-  ;; Workaround for bug in current projectile
-  (setq projectile-project-compilation-cmd ""))
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
 
 (use-package projectile-rails
-  :ensure t)
+  :ensure t
+  :config
+  (define-key projectile-rails-mode-map (kbd "C-c r") 'projectile-rails-command-map)
+  (projectile-rails-global-mode))
 
 (use-package python-mode
   :ensure t)
