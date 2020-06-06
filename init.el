@@ -76,13 +76,7 @@
   :ensure t
   :config
   (global-company-mode t)
-  (setq company-backends (delete 'company-semantic company-backends))
-  (add-to-list 'company-backends #'company-omnisharp))
-
-(use-package csharp-mode
-  :ensure t
-  :config
-  (flycheck-mode))
+  (setq company-backends (delete 'company-semantic company-backends)))
 
 (use-package docker
   :ensure t)
@@ -139,14 +133,6 @@
   (setq geiser-mode-smart-tab-p t)
   (setq geiser-mode-start-repl-p t))
 
-(use-package ggtags
-  :ensure t
-  :config
-  (add-hook 'c-mode-common-hook
-            (lambda ()
-              (when (derived-mode-p 'c-mode 'c++-mode)
-                (ggtags-mode 1)))))
-
 (use-package haml-mode
   :ensure t)
 
@@ -172,13 +158,6 @@
 
 (use-package markup-faces
   :ensure t)
-
-(use-package omnisharp
-  :ensure t
-  :config
-  (add-hook 'csharp-mode-hook 'omnisharp-mode)
-  (add-hook 'csharp-mode-hook 'company-mode)
-  (add-to-list 'company-backends 'company-omnisharp))
 
 (use-package php-mode
   :ensure t)
